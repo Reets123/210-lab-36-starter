@@ -1,6 +1,10 @@
+// Lab 36: Records BST
+// COMSC-210 - Ibrahim Alatig 
+
 // Implementation file for the IntBinaryTree class
 #include <iostream>
 #include "IntBinaryTree.h"
+
 using namespace std;
 
 // insert accepts a TreeNode pointer and a pointer to a node.
