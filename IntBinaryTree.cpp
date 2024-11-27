@@ -3,6 +3,7 @@
 
 // Implementation file for the IntBinaryTree class
 #include <iostream>
+#include <fstream>
 #include "IntBinaryTree.h"
 
 using namespace std;
@@ -21,8 +22,8 @@ void IntBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
 
 // insertNode creates a new node to hold num as its value,
 // and passes it to the insert function.                  
-void IntBinaryTree::insertNode(int num) {
-   TreeNode *newNode;      // Pointer to a new node.
+void IntBinaryTree::insertNode(const string &str) {
+    TreeNode *newNode = new TreeNode;       // Pointer to a new node.
 
    // Create a new node and store num in it.
    newNode = new TreeNode;
