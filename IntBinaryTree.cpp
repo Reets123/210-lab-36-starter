@@ -64,8 +64,8 @@ bool IntBinaryTree::searchNode(const string &str) {
 
 // remove calls deleteNode to delete the      
 // node whose value member is the same as num.
-void IntBinaryTree::remove(int num) {
-   deleteNode(num, root);
+void IntBinaryTree::remove(const string &str) {
+   deleteNode(str, root);
 }
 
 // deleteNode deletes the node whose value 
