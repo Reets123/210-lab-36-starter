@@ -18,7 +18,17 @@ void loadFromFile(IntBinaryTree &tree, const string &filename) {
     while (file >> code) {
         tree.insertNode(code);
     }
-    file.
+    file.close();
+}
+
+void displayMenu() {
+    cout << "Menu:" << endl;
+    cout << "1. Add a record" << endl;
+    cout << "2. Delete a record" << endl;
+    cout << "3. Search a record" << endl;
+    cout << "4. Display records (In-Order)" << endl;
+    cout << "5. Exit" << endl;
+}
 
 int main() {
     
