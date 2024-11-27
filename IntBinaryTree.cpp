@@ -23,12 +23,9 @@ void IntBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
 // insertNode creates a new node to hold num as its value,
 // and passes it to the insert function.                  
 void IntBinaryTree::insertNode(const string &str) {
-    TreeNode *newNode = new TreeNode;       // Pointer to a new node.
-
-   // Create a new node and store num in it.
-   newNode = new TreeNode;
-   newNode->value = str;
-   newNode->left = newNode->right = nullptr;
+    TreeNode *newNode = new TreeNode; // Pointer to a new node.
+    newNode->value = str;
+    newNode->left = newNode->right = nullptr;       
    
    // Insert the node.
    insert(root, newNode);
@@ -38,13 +35,14 @@ void IntBinaryTree::insertNode(const string &str) {
 // deletes all nodes in the tree.                
 void IntBinaryTree::destroySubTree(TreeNode *nodePtr) {
    if (nodePtr) {
-      destroySubTree(nodePtr->left);
-      destroySubTree(nodePtr->right);
-      delete nodePtr;
+      if (nodePtr->left)
+            destroySubTree(nodePtr->left);
+        if (nodePtr->right)
+            destroySubTree(nodePtr->right);
+        delete nodePtr;
    }
 }
    
-
 // searchNode determines if a value is present in  
 // the tree. If so, the function returns true.     
 // Otherwise, it returns false.                    
@@ -70,11 +68,11 @@ void IntBinaryTree::remove(const string &str) {
 
 // deleteNode deletes the node whose value 
 // member is the same as num.              
-void IntBinaryTree::deleteNode(int num, TreeNode *&nodePtr) {
-   if (num < nodePtr->value)
-      deleteNode(num, nodePtr->left);
-   else if (num > nodePtr->value)
-      deleteNode(num, nodePtr->right);
+void IntBinaryTree::deleteNode(const string& str, TreeNode *&nodePtr) {
+   if (str < nodePtr->value)
+      deleteNode(str, nodePtr->left);
+   else if (str > nodePtr->value)
+      deleteNode(str, nodePtr->right);
    else
       makeDeletion(nodePtr);
 }
