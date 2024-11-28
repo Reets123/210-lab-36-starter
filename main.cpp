@@ -31,6 +31,23 @@ void displayMenu() {
 }
 
 int main() {
+    IntBinaryTree tree;
+
+    loadFromFile(tree, "codes.txt");
+
+    int choice;
+    string code;
+
+    do {
+        displayMenu();
+        cin >> choice;
+        cin.ignore();  
+
+        switch (choice) {
+            case 1:
+                cout << "Enter code to add: ";
+                getline(cin, code);
+                tree.insertN
     
 
     return 0;
