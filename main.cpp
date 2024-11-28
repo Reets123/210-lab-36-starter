@@ -47,7 +47,27 @@ int main() {
             case 1:
                 cout << "Enter code to add: ";
                 getline(cin, code);
-                tree.insertN
+                tree.insertNode(code);
+                break;
+
+            case 2:
+                cout << "Enter code to delete: ";
+                getline(cin, code);
+                tree.remove(code);
+                break;
+
+            case 3:
+                cout << "Enter code to search: ";
+                getline(cin, code);
+                if (tree.searchNode(code))
+                    cout << "Code found." << endl;
+                else
+                    cout << "Code not found." << endl;
+                break;
+
+            case 4:
+                cout << "Records (In-Order):" << endl;
+                tree.display
     
 
     return 0;
