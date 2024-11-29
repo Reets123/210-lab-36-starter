@@ -67,8 +67,18 @@ int main() {
 
             case 4:
                 cout << "Records (In-Order):" << endl;
-                tree.display
-    
+                tree.displayInOrder();
+                break;
+
+            case 5:
+                cout << "Exiting..." << endl;
+                break;
+
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+                break;
+        }
+    } while (choice != 5);
 
     return 0;
 }
