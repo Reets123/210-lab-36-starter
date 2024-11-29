@@ -22,7 +22,7 @@ void loadFromFile(StringBinaryTree &tree, const string &filename) {
 }
 
 void displayMenu() {
-    cout << "Menu:" << endl;
+    cout << "\nMenu:" << endl;
     cout << "1. Add a record" << endl;
     cout << "2. Delete a record" << endl;
     cout << "3. Search a record" << endl;
@@ -32,16 +32,14 @@ void displayMenu() {
 
 int main() {
     StringBinaryTree tree;
-
     loadFromFile(tree, "codes.txt");
 
     int choice;
     string code;
-
     do {
         displayMenu();
         cin >> choice;
-        cin.ignore();  
+        cin.ignore(); 
 
         switch (choice) {
             case 1:
