@@ -4,7 +4,7 @@
 // Implementation file for the IntBinaryTree class
 #include <iostream>
 #include <fstream>
-#include "IntBinaryTree.h"
+#include "StringBinaryTree.h"
 
 using namespace std;
 
@@ -35,11 +35,9 @@ void StringBinaryTree::insertNode(const string &str) {
 // deletes all nodes in the tree.                
 void StringBinaryTree::destroySubTree(TreeNode *nodePtr) {
    if (nodePtr) {
-      if (nodePtr->left)
-            destroySubTree(nodePtr->left);
-        if (nodePtr->right)
-            destroySubTree(nodePtr->right);
-        delete nodePtr;
+      destroySubTree(nodePtr->left);
+      destroySubTree(nodePtr->right);
+      delete nodePtr;
    }
 }
    
@@ -48,7 +46,6 @@ void StringBinaryTree::destroySubTree(TreeNode *nodePtr) {
 // Otherwise, it returns false.                    
 bool StringBinaryTree::searchNode(const string &str) {
    TreeNode *nodePtr = root;
-
    while (nodePtr)    {
       if (nodePtr->value == str)
          return true;
@@ -120,25 +117,5 @@ void StringBinaryTree::displayInOrder(TreeNode *nodePtr) const {
       displayInOrder(nodePtr->left);
       cout << nodePtr->value << endl;
       displayInOrder(nodePtr->right);
-   }
-}
-
-// The displayPreOrder member function displays the values      
-// in the subtree pointed to by nodePtr, via preorder traversal.
-void SttringBinaryTree::displayPreOrder(TreeNode *nodePtr) const {
-   if (nodePtr) {
-      cout << nodePtr->value << endl;
-      displayPreOrder(nodePtr->left);     
-      displayPreOrder(nodePtr->right);
-   }
-}
-
-// The displayPostOrder member function displays the values     
-// in the subtree pointed to by nodePtr, via postorder traversal.
-void StringBinaryTree::displayPostOrder(TreeNode *nodePtr) const {
-   if (nodePtr) {
-      displayPostOrder(nodePtr->left);    
-      displayPostOrder(nodePtr->right);
-      cout << nodePtr->value << endl;
    }
 }
