@@ -3,18 +3,18 @@
 
 #include <iostream>
 #include <fstream>
-#include "IntBinaryTree.h"
+#include "StringBinaryTree.h"
 
 using namespace std;
 
-void loadFromFile(IntBinaryTree &tree, const string &filename) {
+void loadFromFile(StringBinaryTree &tree, const string &filename) {
     ifstream file(filename);
     if (!file) {
-        cout << "Error opening file. Check files name" << endl;
+        cout << "Error opening file. Check filename." << endl;
         return;
     }
 
-     string code;
+    string code;
     while (file >> code) {
         tree.insertNode(code);
     }
@@ -31,7 +31,7 @@ void displayMenu() {
 }
 
 int main() {
-    IntBinaryTree tree;
+    StringBinaryTree tree;
 
     loadFromFile(tree, "codes.txt");
 
